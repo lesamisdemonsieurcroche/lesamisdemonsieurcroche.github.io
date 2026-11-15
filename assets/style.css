@@ -1,0 +1,254 @@
+/* =========================================================
+   Les Amis de Monsieur Croche — feuille de style
+   Ambiance « Partition ancienne » : papier crème, sépia, brun
+   ========================================================= */
+
+:root {
+  --papier: #F6EFE2;        /* fond principal */
+  --papier-clair: #FBF7EF;  /* cartes, encarts */
+  --encre: #3B2F2A;         /* texte */
+  --encre-douce: #6B5A4E;   /* texte secondaire */
+  --sepia: #8A5A3B;         /* liens, accents */
+  --brun: #3E2C23;          /* titres forts, pied de page */
+  --filet: #E2D5C0;         /* lignes fines */
+
+  --titres: "Playfair Display", Georgia, serif;
+  --texte: "Lato", "Helvetica Neue", Arial, sans-serif;
+
+  --largeur-texte: 40rem;   /* ~ 65 caractères par ligne : confortable */
+  --largeur-page: 64rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--encre);
+  font-family: var(--texte);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--sepia); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--brun); }
+
+h1, h2, h3 {
+  font-family: var(--titres);
+  font-weight: 400;
+  color: var(--brun);
+  line-height: 1.25;
+}
+h1 { font-size: clamp(2rem, 4.5vw, 2.9rem); margin: 0 0 .5rem; }
+h2 { font-size: clamp(1.6rem, 3vw, 2rem); margin: 3.5rem 0 1rem; }
+h3 { font-size: 1.3rem; margin: 2rem 0 .5rem; }
+
+p { margin: 0 0 1.2rem; }
+
+/* ---------- En-tête ---------- */
+.site-header {
+  text-align: center;
+  padding: 2.5rem 1.5rem 1.25rem;
+}
+.site-title {
+  font-family: var(--titres);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--brun);
+  text-decoration: none;
+  letter-spacing: .02em;
+}
+.site-tagline {
+  margin: .25rem 0 0;
+  font-family: var(--titres);
+  font-style: italic;
+  color: var(--encre-douce);
+}
+
+.site-nav {
+  border-top: 1px solid var(--filet);
+  border-bottom: 1px solid var(--filet);
+  margin-top: 1.5rem;
+}
+.site-nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: .6rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .25rem 1.75rem;
+  max-width: var(--largeur-page);
+}
+.site-nav a {
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--encre);
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--sepia); }
+
+/* ---------- Mise en page ---------- */
+main { padding: 0 1.5rem 4rem; }
+.prose { max-width: var(--largeur-texte); margin: 0 auto; }
+.large { max-width: var(--largeur-page); margin: 0 auto; }
+
+/* Image d'ouverture : présente, mais jamais envahissante */
+.hero {
+  max-width: var(--largeur-page);
+  margin: 2.5rem auto 0;
+}
+.hero img {
+  width: 100%;
+  height: clamp(220px, 42vw, 440px);
+  object-fit: cover;
+  border-radius: 4px;
+}
+.hero figcaption {
+  font-size: .85rem;
+  color: var(--encre-douce);
+  font-style: italic;
+  text-align: right;
+  margin-top: .4rem;
+}
+
+.intro {
+  text-align: center;
+  margin: 3rem auto 0;
+}
+.intro .lead {
+  font-family: var(--titres);
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--brun);
+}
+
+/* Citation */
+blockquote {
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  max-width: 32rem;
+  text-align: center;
+  font-family: var(--titres);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--encre-douce);
+}
+blockquote cite {
+  display: block;
+  margin-top: .5rem;
+  font-family: var(--texte);
+  font-style: normal;
+  font-size: .85rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Ornement de séparation */
+.ornement {
+  text-align: center;
+  color: var(--sepia);
+  font-size: 1.4rem;
+  margin: 3rem 0;
+  letter-spacing: .6em;
+}
+
+/* ---------- Cartes « Ce que je propose » ---------- */
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.carte {
+  background: var(--papier-clair);
+  border: 1px solid var(--filet);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.carte img { height: 190px; width: 100%; object-fit: cover; }
+.carte-corps { padding: 1.25rem 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.carte h3 { margin-top: 0; }
+.carte p { font-size: .98rem; color: var(--encre-douce); }
+.carte .lien { margin-top: auto; font-size: .9rem; letter-spacing: .05em; }
+
+/* ---------- Vidéos ---------- */
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+}
+.video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 4px;
+  background: var(--brun);
+}
+.video p { font-size: .95rem; margin-top: .5rem; color: var(--encre-douce); }
+
+/* ---------- Encart (appel à l'action) ---------- */
+.encart {
+  background: var(--papier-clair);
+  border-left: 3px solid var(--sepia);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+}
+.encart p:last-child { margin-bottom: 0; }
+
+.bouton {
+  display: inline-block;
+  background: var(--brun);
+  color: var(--papier) !important;
+  text-decoration: none;
+  padding: .7rem 1.5rem;
+  border-radius: 2rem;
+  font-size: .9rem;
+  letter-spacing: .06em;
+}
+.bouton:hover { background: var(--sepia); }
+
+/* ---------- Tableau des tarifs ---------- */
+table.tarifs {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+}
+.tarifs th, .tarifs td {
+  text-align: left;
+  padding: .75rem .5rem;
+  border-bottom: 1px solid var(--filet);
+}
+.tarifs th { font-weight: 400; color: var(--encre-douce); font-size: .9rem; letter-spacing: .05em; }
+.tarifs td:last-child { text-align: right; font-family: var(--titres); font-size: 1.15rem; color: var(--brun); }
+
+ul.liste { padding-left: 1.2rem; }
+ul.liste li { margin-bottom: .5rem; }
+ul.liste li::marker { color: var(--sepia); }
+
+/* ---------- Pied de page ---------- */
+.site-footer {
+  background: var(--brun);
+  color: #E9DFCF;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  font-size: .95rem;
+}
+.site-footer a { color: #F3E3C3; }
+.site-footer .site-title { color: #F6EFE2; font-size: 1.4rem; }
+.site-footer p { margin: .4rem 0; }
+
+/* ---------- Petits écrans ---------- */
+@media (max-width: 600px) {
+  body { font-size: 1rem; }
+  .site-nav ul { gap: .2rem 1rem; }
+  .site-nav a { font-size: .75rem; }
+}
