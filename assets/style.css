@@ -267,3 +267,26 @@ ul.liste li::marker { color: var(--sepia); }
   object-fit: cover;
   border-radius: 4px;
 }
+
+/* ---------- Écrits ---------- */
+.lead-ecrits { font-family: var(--titres); font-size: 1.2rem; color: var(--encre-douce); }
+.sommaire { font-size: .9rem; letter-spacing: .03em; border-bottom: 1px solid var(--filet); padding-bottom: 1.5rem; }
+.intro-rubrique { color: var(--encre-douce); font-style: italic; margin-top: -.5rem; }
+.liste-articles { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.liste-articles li { padding: 1.1rem 0; border-bottom: 1px solid var(--filet); }
+.liste-articles .titre-article { font-family: var(--titres); font-size: 1.25rem; text-decoration: none; color: var(--brun); }
+.liste-articles .titre-article:hover { color: var(--sepia); }
+.liste-articles .date, .article .date { display: block; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--encre-douce); margin: .2rem 0 .4rem; }
+.liste-articles p { margin: 0; font-size: .97rem; color: var(--encre-douce); }
+
+.article { padding-top: 2.5rem; }
+.article .fil { font-size: .85rem; color: var(--encre-douce); margin-bottom: 1.5rem; }
+.article .fil a { text-decoration: none; }
+.article .contenu img { margin: 1.5rem auto; border-radius: 4px; height: auto; }
+.article .contenu figure { margin: 1.5rem 0; }
+.article .contenu figcaption { font-size: .85rem; font-style: italic; color: var(--encre-douce); text-align: center; }
+.article .contenu blockquote { max-width: none; text-align: left; font-size: 1.1rem; padding: 0 0 0 1.25rem; border-left: 2px solid var(--sepia); margin: 1.5rem 0; }
+.article .contenu ul, .article .contenu ol { padding-left: 1.3rem; }
+.article .contenu .video { margin: 1.5rem 0; }
+.voir-aussi { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--filet); }
+.voir-aussi h2 { font-size: 1.3rem; margin-top: 1rem; }
