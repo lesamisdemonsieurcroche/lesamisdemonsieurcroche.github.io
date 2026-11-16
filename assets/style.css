@@ -186,13 +186,14 @@ blockquote cite {
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 2rem;
 }
-.video iframe {
+.video iframe, .video video {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
   border-radius: 4px;
   background: var(--brun);
 }
+.video video { object-fit: contain; }
 .video p { font-size: .95rem; margin-top: .5rem; color: var(--encre-douce); }
 
 /* ---------- Encart (appel à l'action) ---------- */
@@ -251,4 +252,18 @@ ul.liste li::marker { color: var(--sepia); }
   body { font-size: 1rem; }
   .site-nav ul { gap: .2rem 1rem; }
   .site-nav a { font-size: .75rem; }
+}
+
+/* ---------- Galerie de photos ---------- */
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+  margin: 1rem 0 2rem;
+}
+.galerie img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 4px;
 }
